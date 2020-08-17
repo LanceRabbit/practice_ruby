@@ -32,3 +32,15 @@ class << obj
     'obj#a_singleton_method()'
 end end
 p obj.singleton_methods # [:a_singleton_method]
+
+
+p '~~~self~~~~'
+class Demo
+  puts self
+  class << self
+    puts self
+  end
+end
+Demo.singleton_class
+# Demo
+# #<Class:Demo>
