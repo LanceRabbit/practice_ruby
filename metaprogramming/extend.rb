@@ -13,6 +13,10 @@ module MyModule2
   end
 end
 
+module MyModule3
+  def class_method; "MyModule3 - class_method"; end
+end
+
 class MyClass
   extend MyModule1
 end
@@ -20,3 +24,4 @@ end
 p MyClass.ancestors
 p MyClass.my_method
 p MyClass.extend(MyModule2).my_new_method
+p MyClass.extend(MyModule3).class_method

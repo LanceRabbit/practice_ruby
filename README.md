@@ -1,6 +1,6 @@
 # README
 
-ruby code pratice
+ruby code practice
 
 ## requirement
 

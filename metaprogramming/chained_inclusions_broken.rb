@@ -1,7 +1,7 @@
 # The Problem of Chained Inclusions
 module SecondLevelModule
   def self.included(base)
-    p base
+    p "SecondLevelModule: #{base}"
     base.extend ClassMethods
   end
 
@@ -12,10 +12,9 @@ module SecondLevelModule
   end
 end
 
-
 module FirstLevelModule
   def self.included(base)
-    p base
+    p "FirstLevelModule: #{base}"
     base.extend ClassMethods
     # base.send :include, SecondLevelModule
   end
