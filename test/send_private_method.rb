@@ -4,7 +4,7 @@ class SendPrivateMethod
   end
 
   def call
-    SendPrivateMethod.private_instance_methods(false)
+    self.class.private_instance_methods(false)
     .select do |method| method.to_s.include?('check') end
     .each do |method|
       send(method)

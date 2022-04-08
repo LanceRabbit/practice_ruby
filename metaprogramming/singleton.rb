@@ -44,3 +44,40 @@ end
 Demo.singleton_class
 # Demo
 # #<Class:Demo>
+
+
+# REF: https://refactoring.guru/design-patterns/singleton/ruby/example
+
+class Singleton
+  @instance = new
+
+  class << self
+    def instance
+      @instance
+    end
+  end
+
+  private_class_method :new
+
+end
+
+p ObjData.instance
+p ObjData.instance.object_id
+p ObjData.instance.object_id
+
+
+# frozen_string_literal: true
+
+class BitlyClientService
+  include Singleton
+
+  class << self
+    delegate :client, to: :instance
+  end
+
+  attr_reader :client
+
+  def initialize
+    @client = Bitly::API::Client.new(token: ENV["BITLY_API_KEY"])
+  end
+end
