@@ -1,7 +1,9 @@
+# frozen_string_literal: true
 
-p "Self Yield"
+p 'Self Yield'
 class Person
   attr_accessor :name, :surname
+
   def initialize
     yield self
   end
@@ -12,3 +14,4 @@ joe = Person.new do |p|
 end
 
 p joe
+

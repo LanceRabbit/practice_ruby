@@ -10,8 +10,7 @@ class Book
   end
 end
 
-
-class BooksController < Api::BaseController
+class BooksController < API::BaseController
   def index
     books = Book.includes(:author).where(id: params[:id])
 
@@ -22,10 +21,11 @@ class BooksController < Api::BaseController
     def response_json(books)
       books.map do |book|
         {
-          id: book.id
+          id: book.id,
           main_author: book.main_author
         }
       end
     end
   end
 end
+

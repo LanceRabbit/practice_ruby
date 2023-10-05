@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Food
   include Enumerable
 
@@ -6,11 +8,11 @@ class Food
   end
 
   def each(&block)
-    p "each"
+    p 'each'
     @list.each(&block)
   end
 end
 
-test = Food.new("hamburger", "hot dog", "noodle", "black tea")
-p "before call method"
+test = Food.new('hamburger', 'hot dog', 'noodle', 'black tea')
+p 'before call method'
 p test.map(&:upcase)
